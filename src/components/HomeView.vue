@@ -8,22 +8,15 @@ import TaskModal from "./TaskModal.vue";
 <template>
   <div class="wrapper">
     <!-- pop-up start-->
-
     <ExitModal />
-
     <NewCardModal />
-
     <TaskModal />
-
     <!-- pop-up end-->
-
     <BaseHeader />
     <main class="main">
       <div class="container">
         <div class="main__block">
-          <div class="main__content">
-            <TaskColumn />
-          </div>
+          <TaskColumn />
         </div>
       </div>
     </main>
