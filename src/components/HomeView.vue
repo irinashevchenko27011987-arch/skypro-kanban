@@ -1,8 +1,7 @@
 <script setup>
-import BaseHeader from "./BaseHeader.vue";
 import ExitModal from "./ExitModal.vue";
 import NewCardModal from "./NewCardModal.vue";
-import TaskColumn from "./TaskColumn.vue";
+import TaskDesk from "./TaskDesk.vue";
 import TaskModal from "./TaskModal.vue";
 </script>
 <template>
@@ -12,14 +11,7 @@ import TaskModal from "./TaskModal.vue";
     <NewCardModal />
     <TaskModal />
     <!-- pop-up end-->
-    <BaseHeader />
-    <main class="main">
-      <div class="container">
-        <div class="main__block">
-          <TaskColumn />
-        </div>
-      </div>
-    </main>
+    <TaskDesk />
   </div>
 </template>
 
