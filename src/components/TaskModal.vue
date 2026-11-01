@@ -13,19 +13,19 @@
             <p class="status__p subttl">Статус</p>
             <div class="status__themes">
               <div class="status__theme _hide">
-                <p>Без статуса</p>
+                <p>БЕЗ СТАТУСА</p>
               </div>
               <div class="status__theme _gray">
-                <p class="_gray">Нужно сделать</p>
+                <p class="_gray">НУЖНО СДЕЛАТЬ</p>
               </div>
               <div class="status__theme _hide">
-                <p>В работе</p>
+                <p>В РАБОТЕ</p>
               </div>
               <div class="status__theme _hide">
-                <p>Тестирование</p>
+                <p>ТЕСТИРОВАНИЕ</p>
               </div>
               <div class="status__theme _hide">
-                <p>Готово</p>
+                <p>ГОТОВО</p>
               </div>
             </div>
           </div>
