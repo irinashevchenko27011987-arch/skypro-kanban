@@ -2,8 +2,15 @@
   <div class="cards__item">
     <div class="cards__card card">
       <div class="card__group">
-        <div class="card__theme _green">
-          <p class="_green">Research</p>
+        <div
+          class="card__theme"
+          :class="{
+            _orange: task.topic === 'Web Design',
+            _green: task.topic === 'Research',
+            _purple: task.topic === 'Copywriting',
+          }"
+        >
+          <p>{{ task.topic }}</p>
         </div>
         <a href="#popBrowse" target="_self">
           <div class="card__btn">
@@ -15,7 +22,7 @@
       </div>
       <div class="card__content">
         <a href="" target="_blank">
-          <h3 class="card__title">Название задачи</h3>
+          <h3 class="card__title">{{ task.title }}</h3>
         </a>
         <div class="card__date">
           <svg
@@ -46,13 +53,20 @@
               </clipPath>
             </defs>
           </svg>
-          <p>30.10.23</p>
+          <p>{{ task.date }}</p>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+defineProps({
+  task: {
+    type: Object,
+    required: true,
+  },
+});
+</script>
 
 <style lang="scss" scoped></style>
