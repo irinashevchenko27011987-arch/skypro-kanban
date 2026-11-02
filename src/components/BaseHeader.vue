@@ -1,6 +1,11 @@
 <script setup>
 import logo from "../assets/logo.png";
 import logoDark from "../assets/logo_dark.png";
+import { ref } from "vue";
+const isUserMenuOpen = ref(false);
+const toggleUserMenu = () => {
+  isUserMenuOpen.value = !isUserMenuOpen.value;
+};
 </script>
 <template>
   <header class="header">
@@ -16,10 +21,17 @@ import logoDark from "../assets/logo_dark.png";
           <button class="header__btn-main-new _hover01" id="btnMainNew">
             <a href="#popNewCard">Создать новую задачу</a>
           </button>
-          <a href="#user-set-target" class="header__user _hover02"
+          <a
+            href="#"
+            @click.prevent="toggleUserMenu"
+            class="header__user _hover02"
             >Ivan Ivanov</a
           >
-          <div class="header__pop-user-set pop-user-set" id="user-set-target">
+          <div
+            v-if="isUserMenuOpen"
+            class="header__pop-user-set pop-user-set"
+            id="user-set-target"
+          >
             <!-- <a href="">x</a> -->
             <p class="pop-user-set__name">Ivan Ivanov</p>
             <p class="pop-user-set__mail">ivan.ivanov@gmail.com</p>
