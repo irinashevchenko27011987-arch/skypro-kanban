@@ -2,8 +2,17 @@
   <BaseHeader />
   <main class="main">
     <div class="container">
-      <div class="loader" v-if="loading">Данные загружаются</div>
-
+      <div class="loader-container" v-if="loading">
+        <div class="loader"></div>
+        <p class="loader-text">Данные загружаются...</p>
+      </div>
+      <div
+        v-else-if="!initialTasks || initialTasks.length === 0"
+        class="no-tasks-global"
+      >
+        <h2>Задач нет</h2>
+        <p>Создайте свою первую задачу в хедере!</p>
+      </div>
       <div v-else class="main__block">
         <div class="main__content">
           <div class="column">
@@ -89,12 +98,68 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
-.loader {
+<style lang="scss" scoped>
+@import "../assets/main/main.scss";
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 60vh;
   width: 100%;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #eaeef6;
+  border-top: 5px solid $primary-color;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+.loader-text {
+  color: #94a6be;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.no-tasks-global {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  text-align: center;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #94a6be;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 16px;
+    color: #b5c4d6;
+  }
+}
+.main__block {
+  width: 100%;
+  margin: 0 auto;
+  padding: 25px 0 49px;
+}
+.main__content {
+  width: 100%;
+  display: flex;
 }
 </style>
