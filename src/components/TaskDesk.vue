@@ -99,7 +99,6 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/main/main.scss";
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -122,7 +121,7 @@ onMounted(() => {
   width: 50px;
   height: 50px;
   border: 5px solid #eaeef6;
-  border-top: 5px solid $primary-color;
+  border-top: 5px solid var(--primary-color);
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 15px;
@@ -161,5 +160,15 @@ onMounted(() => {
 .main__content {
   width: 100%;
   display: flex;
+}
+@media screen and (max-width: 1200px) {
+  .main__block {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 0 64px;
+  }
+  .main__content {
+    display: block;
+  }
 }
 </style>

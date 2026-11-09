@@ -23,7 +23,6 @@
 <script setup></script>
 
 <style lang="scss" scoped>
-@import "../assets/main/main.scss";
 .pop-exit {
   display: none;
   width: 100%;
@@ -68,7 +67,7 @@
 .pop-exit__exit-yes {
   width: 153px;
   height: 30px;
-  background-color: $primary-color;
+  background-color: var(--primary-color);
   border-radius: 4px;
   border: none;
   outline: none;
@@ -95,7 +94,7 @@
   height: 30px;
   background-color: transparent;
   border-radius: 4px;
-  border: 0.7px solid var(--palette-navy-60, $primary-color);
+  border: 0.7px solid var(--primary-color);
   outline: none;
   display: flex;
   align-items: center;
@@ -109,7 +108,7 @@
 .pop-exit__exit-no a {
   width: 100%;
   height: 100%;
-  color: $primary-color;
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -119,5 +118,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media only screen and (max-width: 375px) {
+  .pop-exit__block {
+    padding: 50px 20px;
+  }
+  .pop-exit__exit-yes {
+    width: 100%;
+    height: 40px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .pop-exit__exit-no {
+    width: 100%;
+    height: 40px;
+  }
+  .pop-exit__form-group {
+    display: block;
+  }
 }
 </style>

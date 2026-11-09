@@ -50,7 +50,6 @@ const toggleUserMenu = () => {
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/main/main.scss";
 .header {
   width: 100%;
   margin: 0 auto;
@@ -81,7 +80,7 @@ const toggleUserMenu = () => {
   width: 178px;
   height: 30px;
   border-radius: 4px;
-  background-color: $primary-color;
+  background-color: var(--primary-color);
   color: #ffffff;
   border: none;
   font-size: 14px;
@@ -100,7 +99,7 @@ const toggleUserMenu = () => {
   justify-content: center;
   font-size: 14px;
   line-height: 20px;
-  color: $primary-color;
+  color: var(--primary-color);
 }
 .header__user::after {
   content: "";
@@ -108,8 +107,8 @@ const toggleUserMenu = () => {
   width: 6px;
   height: 6px;
   border-radius: 1px;
-  border-left: 1.9px solid $primary-color;
-  border-bottom: 1.9px solid $primary-color;
+  border-left: 1.9px solid var(--primary-color);
+  border-bottom: 1.9px solid var(--primary-color);
   transform: rotate(-45deg);
   margin: -6px 0 0 5px;
   padding: 0;
@@ -185,11 +184,24 @@ const toggleUserMenu = () => {
   width: 72px;
   height: 30px;
   background: transparent;
-  color: $primary-color;
+  color: var(--primary-color);
   border-radius: 4px;
-  border: 1px solid $primary-color;
+  border: 1px solid var(--primary-color);
 }
 .pop-user-set button a {
-  color: $primary-color;
+  color: var(--primary-color);
+}
+@media screen and (max-width: 495px) {
+  .header__btn-main-new {
+    z-index: 3;
+    position: fixed;
+    left: 16px;
+    bottom: 30px;
+    top: auto;
+    width: calc(100vw - 32px);
+    height: 40px;
+    border-radius: 4px;
+    margin-right: 0;
+  }
 }
 </style>

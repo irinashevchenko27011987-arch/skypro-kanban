@@ -149,7 +149,6 @@
 <script setup></script>
 
 <style lang="scss" scoped>
-@import "../assets/main/main.scss";
 .pop-new-card {
   display: none;
   width: 100%;
@@ -262,7 +261,7 @@
 .form-new__create {
   width: 132px;
   height: 30px;
-  background-color: $primary-color;
+  background-color: var(--primary-color);
   border-radius: 4px;
   border: 0;
   outline: none;

@@ -19,7 +19,6 @@ import Task from "./Task.vue";
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/main/main.scss";
 .main__column {
   width: 20%;
   margin: 0 auto;
@@ -42,5 +41,17 @@ import Task from "./Task.vue";
   width: 100%;
   display: block;
   position: relative;
+}
+@media screen and (max-width: 1200px) {
+  .main__column {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+  .cards {
+    width: 100%;
+    display: flex;
+    overflow-y: auto;
+  }
 }
 </style>
