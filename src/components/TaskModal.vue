@@ -355,6 +355,9 @@
   line-height: 14px;
   white-space: nowrap;
 }
+._active-category {
+  opacity: 1 !important;
+}
 .calendar {
   width: 182px;
   margin-bottom: 20px;

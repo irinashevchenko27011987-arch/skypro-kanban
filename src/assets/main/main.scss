@@ -63,3 +63,9 @@ ul li {
 ._dark {
   display: none !important;
 }
+.pop-user-set:target,
+.pop-exit:target,
+.pop-new-card:target,
+.pop-browse:target {
+  display: block !important;
+}
