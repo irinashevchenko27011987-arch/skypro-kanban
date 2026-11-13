@@ -87,6 +87,10 @@ const toggleUserMenu = () => {
   line-height: 1;
   font-weight: 500;
   margin-right: 20px;
+
+  &:hover {
+    background-color: var(--hover-color);
+  }
 }
 .header__btn-main-new a {
   color: #ffffff;
@@ -100,18 +104,27 @@ const toggleUserMenu = () => {
   font-size: 14px;
   line-height: 20px;
   color: var(--primary-color);
-}
-.header__user::after {
-  content: "";
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 1px;
-  border-left: 1.9px solid var(--primary-color);
-  border-bottom: 1.9px solid var(--primary-color);
-  transform: rotate(-45deg);
-  margin: -6px 0 0 5px;
-  padding: 0;
+  &::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    border-left: 1.9px solid var(--primary-color);
+    border-bottom: 1.9px solid var(--primary-color);
+    transform: rotate(-45deg);
+    margin: -6px 0 0 5px;
+    padding: 0;
+  }
+
+  &:hover {
+    color: var(--hover-color);
+
+    &::after {
+      border-left-color: var(--hover-color);
+      border-bottom-color: var(--hover-color);
+    }
+  }
 }
 .header__pop-user-set {
   display: block;
@@ -187,9 +200,20 @@ const toggleUserMenu = () => {
   color: var(--primary-color);
   border-radius: 4px;
   border: 1px solid var(--primary-color);
-}
-.pop-user-set button a {
-  color: var(--primary-color);
+
+  a {
+    color: var(--primary-color);
+    transition: color 0.2s ease;
+  }
+
+  &:hover {
+    background-color: var(--hover-color);
+    color: #ffffff;
+
+    a {
+      color: #ffffff;
+    }
+  }
 }
 @media screen and (max-width: 495px) {
   .header__btn-main-new {

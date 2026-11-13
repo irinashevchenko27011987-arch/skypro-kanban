@@ -80,6 +80,9 @@
   letter-spacing: -0.14px;
   color: #ffffff;
   margin-right: 10px;
+  &:hover {
+    background-color: var(--hover-color);
+  }
 }
 .pop-exit__exit-yes a {
   width: 100%;
@@ -89,6 +92,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .pop-exit__exit-no {
   width: 153px;
   height: 30px;
@@ -104,6 +108,10 @@
   font-weight: 500;
   letter-spacing: -0.14px;
   color: #ffffff;
+  &:hover {
+    background-color: var(--hover-color);
+    color: #ffffff;
+  }
 }
 .pop-exit__exit-no a {
   width: 100%;
@@ -112,7 +120,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  &:hover {
+    color: #ffffff;
+  }
 }
+
 .pop-exit__form-group {
   width: 100%;
   display: flex;

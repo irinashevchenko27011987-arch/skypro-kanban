@@ -270,6 +270,9 @@
   line-height: 1;
   color: #ffffff;
   float: right;
+  &:hover {
+    background-color: #33399b;
+  }
 }
 
 .calendar {
@@ -346,6 +349,22 @@
 }
 .calendar__period {
   padding: 0 7px;
+}
+.nav__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__action {
+  width: 18px;
+  height: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav__action svg {
+  fill: #94a6be;
 }
 .categories {
   margin-bottom: 20px;
