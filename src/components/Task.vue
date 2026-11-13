@@ -2,8 +2,15 @@
   <div class="cards__item">
     <div class="cards__card card">
       <div class="card__group">
-        <div class="card__theme _green">
-          <p class="_green">Research</p>
+        <div
+          class="card__theme"
+          :class="{
+            _orange: task.topic === 'Web Design',
+            _green: task.topic === 'Research',
+            _purple: task.topic === 'Copywriting',
+          }"
+        >
+          <p>{{ task.topic }}</p>
         </div>
         <a href="#popBrowse" target="_self">
           <div class="card__btn">
@@ -15,7 +22,7 @@
       </div>
       <div class="card__content">
         <a href="" target="_blank">
-          <h3 class="card__title">Название задачи</h3>
+          <h3 class="card__title">{{ task.title }}</h3>
         </a>
         <div class="card__date">
           <svg
@@ -46,13 +53,143 @@
               </clipPath>
             </defs>
           </svg>
-          <p>30.10.23</p>
+          <p>{{ task.date }}</p>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+defineProps({
+  task: {
+    type: Object,
+    required: true,
+  },
+});
+</script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@keyframes card-animation {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    height: auto;
+    opacity: 1;
+  }
+}
+.cards__item {
+  padding: 5px;
+  animation-name: card-animation;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+}
+.cards__card {
+  width: 220px;
+  height: 130px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+  padding: 15px 13px 19px;
+}
+
+.card__group {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card__theme {
+  width: auto;
+  height: 20px;
+  padding: 5px 14px;
+  border-radius: 18px;
+}
+.card__theme p {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 10px;
+}
+.card__btn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2px;
+}
+.card__btn div {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #94a6be;
+}
+.card__title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.card__content {
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.card__date {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.card__date svg {
+  width: 13px;
+}
+.card__date p {
+  margin-left: 6px;
+  font-size: 10px;
+  line-height: 13px;
+  color: #94a6be;
+  letter-spacing: 0.2px;
+}
+._orange {
+  background-color: #ffe4c2;
+  color: #ff6d00;
+}
+
+._green {
+  background-color: #b4fdd1;
+  color: #06b16e;
+}
+
+._purple {
+  background-color: #e9d4ff;
+  color: #9a48f1;
+}
+
+._gray {
+  background: #94a6be;
+  color: #ffffff;
+}
+@media screen and (max-width: 1200px) {
+  .cards__card {
+    width: 220px;
+    height: 130px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: stretch;
+    padding: 15px 13px 19px;
+  }
+}
+</style>
