@@ -13,19 +13,19 @@
             <p class="status__p subttl">Статус</p>
             <div class="status__themes">
               <div class="status__theme _hide">
-                <p>Без статуса</p>
+                <p>БЕЗ СТАТУСА</p>
               </div>
               <div class="status__theme _gray">
-                <p class="_gray">Нужно сделать</p>
+                <p class="_gray">НУЖНО СДЕЛАТЬ</p>
               </div>
               <div class="status__theme _hide">
-                <p>В работе</p>
+                <p>В РАБОТЕ</p>
               </div>
               <div class="status__theme _hide">
-                <p>Тестирование</p>
+                <p>ТЕСТИРОВАНИЕ</p>
               </div>
               <div class="status__theme _hide">
-                <p>Готово</p>
+                <p>ГОТОВО</p>
               </div>
             </div>
           </div>
@@ -182,4 +182,292 @@
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.pop-browse {
+  display: none;
+  width: 100%;
+  height: 100%;
+  min-width: 375px;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 7;
+}
+.pop-browse__container {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+.pop-browse__block {
+  display: block;
+  margin: 0 auto;
+  background-color: #ffffff;
+  max-width: 630px;
+  width: 100%;
+  padding: 40px 30px 38px;
+  border-radius: 10px;
+  border: 0.7px solid #d4dbe5;
+  position: relative;
+}
+.pop-browse__content {
+  display: block;
+  text-align: left;
+}
+.pop-browse__content .categories__theme {
+  opacity: 1;
+}
+.pop-browse__content .theme-down {
+  display: none;
+  margin-bottom: 20px;
+}
+.pop-browse__content .theme-top {
+  display: block;
+}
+.pop-browse__top-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.pop-browse__ttl {
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.pop-browse__wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.pop-browse__form {
+  max-width: 370px;
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+.pop-browse__btn-browse,
+.pop-browse__btn-edit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.pop-browse__btn-browse button,
+.pop-browse__btn-edit button {
+  height: 30px;
+  margin-bottom: 10px;
+  padding: 0 14px;
+}
+.pop-browse__btn-browse .btn-group button,
+.pop-browse__btn-edit .btn-group button {
+  margin-right: 8px;
+}
+.form-browse__block {
+  display: flex;
+  flex-direction: column;
+}
+.form-browse__area {
+  max-width: 370px;
+  width: 100%;
+  outline: none;
+  padding: 14px;
+  background: #eaeef6;
+  border: 0.7px solid rgba(148, 166, 190, 0.4);
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.14px;
+  margin-top: 14px;
+  height: 200px;
+}
+.form-browse__area::-moz-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1px;
+  color: #94a6be;
+  letter-spacing: -0.14px;
+}
+.form-browse__area::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1px;
+  color: #94a6be;
+  letter-spacing: -0.14px;
+}
+
+.status {
+  margin-bottom: 11px;
+}
+.status__p {
+  margin-bottom: 14px;
+}
+.status__themes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.status__theme {
+  border-radius: 24px;
+  border: 0.7px solid rgba(148, 166, 190, 0.4);
+  color: #94a6be;
+  padding: 11px 14px 10px;
+  margin-right: 7px;
+  margin-bottom: 7px;
+}
+.status__theme p {
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.14px;
+}
+.categories {
+  margin-bottom: 20px;
+}
+.categories__themes {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.categories__p {
+  margin-bottom: 14px;
+}
+.categories__theme {
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  padding: 8px 20px;
+  border-radius: 24px;
+  margin-right: 7px;
+  opacity: 0.4;
+}
+.categories__theme p {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+  white-space: nowrap;
+}
+._active-category {
+  opacity: 1 !important;
+}
+.calendar {
+  width: 182px;
+  margin-bottom: 20px;
+}
+.calendar__ttl {
+  margin-bottom: 14px;
+  padding: 0 7px;
+}
+.calendar__p {
+  color: #94a6be;
+  font-size: 10px;
+  line-height: 1;
+}
+.calendar__p span {
+  color: #000000;
+}
+.calendar__block {
+  display: block;
+}
+.calendar__month {
+  color: #94a6be;
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 600;
+}
+.calendar__content {
+  margin-bottom: 12px;
+}
+.calendar__days-names {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 7px 0;
+  padding: 0 7px;
+}
+.calendar__day-name {
+  color: #94a6be;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.2px;
+}
+.calendar__cells {
+  width: 182px;
+  height: 126px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.calendar__cell {
+  width: 22px;
+  height: 22px;
+  margin: 2px;
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  color: #94a6be;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+}
+.calendar__nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding: 0 7px;
+}
+.calendar__period {
+  padding: 0 7px;
+}
+.nav {
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__action {
+    width: 18px;
+    height: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & svg {
+      fill: #94a6be;
+    }
+  }
+}
+._orange {
+  background-color: #ffe4c2;
+  color: #ff6d00;
+}
+
+._green {
+  background-color: #b4fdd1;
+  color: #06b16e;
+}
+
+._purple {
+  background-color: #e9d4ff;
+  color: #9a48f1;
+}
+
+._gray {
+  background: #94a6be;
+  color: #ffffff;
+}
+</style>
