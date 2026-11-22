@@ -82,9 +82,6 @@
         </div>
       </div>
     </div>
-    <ExitModal />
-    <NewCardModal />
-    <TaskModal />
   </main>
 </template>
 
@@ -99,9 +96,9 @@ onMounted(() => {
     loading.value = false;
   }, 2000);
 });
-import ExitModal from "./ExitModal.vue";
-import NewCardModal from "./NewCardModal.vue";
-import TaskModal from "./TaskModal.vue";
+import ExitModal from "../views/ExitModal.vue";
+import NewCardModal from "../views/NewCardModal.vue";
+import TaskModal from "../views/TaskModal.vue";
 </script>
 
 <style lang="scss" scoped>

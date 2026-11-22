@@ -2,6 +2,7 @@
 import logo from "../assets/logo.png";
 import logoDark from "../assets/logo_dark.png";
 import { ref } from "vue";
+import { RouterLink } from "vue-router";
 const isUserMenuOpen = ref(false);
 const toggleUserMenu = () => {
   isUserMenuOpen.value = !isUserMenuOpen.value;
@@ -19,7 +20,7 @@ const toggleUserMenu = () => {
         </div>
         <nav class="header__nav">
           <button class="header__btn-main-new _hover01" id="btnMainNew">
-            <a href="#popNewCard">Создать новую задачу</a>
+            <RouterLink to="new-card">Создать новую задачу</RouterLink>
           </button>
           <a
             href="#"
@@ -40,7 +41,7 @@ const toggleUserMenu = () => {
               <input type="checkbox" class="checkbox" name="checkbox" />
             </div>
             <button type="button" class="_hover03">
-              <a href="#popExit">Выйти</a>
+              <RouterLink to="exit">Выйти</RouterLink>
             </button>
           </div>
         </nav>
