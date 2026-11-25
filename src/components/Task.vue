@@ -12,13 +12,13 @@
         >
           <p>{{ task.topic }}</p>
         </div>
-        <a href="#popBrowse" target="_self">
+        <RouterLink :to="`/card/${task.id}`">
           <div class="card__btn">
             <div></div>
             <div></div>
             <div></div>
           </div>
-        </a>
+        </RouterLink>
       </div>
       <div class="card__content">
         <a href="" target="_blank">
@@ -61,6 +61,7 @@
 </template>
 
 <script setup>
+import { RouterLink } from "vue-router";
 defineProps({
   task: {
     type: Object,
